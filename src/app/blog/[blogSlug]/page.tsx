@@ -1,4 +1,4 @@
-import { BlogLayout } from "@/app/layouts/blog/layout";
+import { BlogLayout } from "@/app/layouts/blog/blog-layout";
 import { paths } from "@/routes/paths";
 import { getArticleBySlugAction } from "@/server/actions/articles";
 import { notFound } from "next/navigation";
