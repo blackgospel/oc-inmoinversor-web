@@ -1,11 +1,11 @@
+import { body, title } from "@/lib/fonts";
 import type { Metadata } from "next";
-import "./globals.css";
 import Footer from "./(shared)/footer";
 import NavMain from "./(shared)/nav-main";
-import { body, title } from "@/lib/fonts";
+import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Inmo Inversor | Aprende a invertir en bienes raices en España",
+  title: "%s | Inmo Inversor | Aprende a invertir en bienes raices en España",
   description: "Canal de aprendizaje sobre inversión inmobiliaria en España",
 };
 

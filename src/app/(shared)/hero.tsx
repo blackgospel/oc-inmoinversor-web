@@ -1,6 +1,5 @@
-import React from "react";
-import Image from "next/image";
 import { InnerWrap, Wrapper } from "@/lib/atoms";
+import Image from "next/image";
 
 const heroContent = {
   title: "Real Estate Investment Insights",
@@ -10,7 +9,7 @@ const heroContent = {
     { text: "Learn More", url: "/learn-more" },
     { text: "Subscribe", url: "/subscribe" },
   ],
-  imageUrl: "", // Replace with your image path
+  imageUrl: "/img/hero.jpg",
   imageAlt: "Real Estate Insights",
 };
 

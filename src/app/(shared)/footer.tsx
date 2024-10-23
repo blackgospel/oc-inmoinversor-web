@@ -1,12 +1,12 @@
-import React from "react";
+import { getLatestArticleAction } from "@/server/actions/articles";
 import Image from "next/image";
 import {
+  FaDiscord,
   FaFacebook,
   FaInstagram,
-  FaTwitter,
   FaLinkedin,
+  FaTwitter,
   FaYoutube,
-  FaDiscord,
 } from "react-icons/fa";
 
 type FooterLink = {
@@ -55,13 +55,9 @@ const footer: { columns: FooterColumn[] } = {
   ],
 };
 
-const recentVideo = {
-  title: "Latest Real Estate Investment Tips",
-  thumbnailUrl: "", // Replace with your thumbnail path
-  videoUrl: "https://youtube.com/watch?v=example", // Replace with your video URL
-};
+export default async function Footer() {
+  const latestArticle = await getLatestArticleAction();
 
-export default function Footer() {
   return (
     <footer className="bg-white text-black py-8 text-sm border-t border-gray-200">
       <div className="w-full mx-auto">
@@ -70,13 +66,13 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4">Latest Video</h3>
             <div className="aspect-video relative mb-4 rounded-lg overflow-hidden bg-slate-100">
               <a
-                href={recentVideo.videoUrl}
+                href={latestArticle.video_url}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <Image
-                  src={recentVideo.thumbnailUrl}
-                  alt={recentVideo.title}
+                  src={latestArticle.image}
+                  alt={latestArticle.title}
                   fill
                   className="aspect-video absolute inset-0"
                 />
