@@ -38,6 +38,19 @@ related_posts:
   - comprehensive-guide-short-term-rental-investment-airbnb
 ---
 
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
+import { Button } from "@/components/ui/button";
+
 ## Introduction
 
 As a property owner in Spain, choosing between short-term rentals like Airbnb and traditional long-term leases is a critical decision. Not only does this choice affect your rental income and management workload, but it also has significant tax implications. Spanish tax laws treat income from short-term and long-term rentals differently, impacting everything from deductions to tax rates.
@@ -136,6 +149,27 @@ When deciding between short-term and long-term rentals in Spain, taxes play a cr
 - **Local Regulations:** In cities like Madrid and Barcelona, local regulations may restrict short-term rentals, forcing property owners to consider long-term leases. Understanding these regulations is essential to making an informed decision.
 
 ---
+
+## Custom Component
+
+<AlertDialog>
+  <AlertDialogTrigger asChild>
+    <Button variant="outline">Show Dialog</Button>
+  </AlertDialogTrigger>
+  <AlertDialogContent>
+    <AlertDialogHeader>
+      <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+      <AlertDialogDescription>
+        This action cannot be undone. This will permanently delete your account
+        and remove your data from our servers.
+      </AlertDialogDescription>
+    </AlertDialogHeader>
+    <AlertDialogFooter>
+      <AlertDialogCancel>Cancel</AlertDialogCancel>
+      <AlertDialogAction>Continue</AlertDialogAction>
+    </AlertDialogFooter>
+  </AlertDialogContent>
+</AlertDialog>
 
 ## Conclusion
 

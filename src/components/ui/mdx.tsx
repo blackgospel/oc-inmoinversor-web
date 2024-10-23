@@ -7,6 +7,18 @@ import Image from "next/image";
 import Link, { LinkProps } from "next/link";
 import React from "react";
 import { highlight } from "sugar-high";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "./alert-dialog";
+import { Button } from "./button";
 
 interface TableData {
   headers: string[];
@@ -84,6 +96,7 @@ function RoundedImage(
       lazyRoot?: string | undefined;
     } & React.RefAttributes<HTMLImageElement | null>
 ) {
+  // eslint-disable-next-line jsx-a11y/alt-text
   return <Image className="rounded-lg" {...props} />;
 }
 
@@ -96,11 +109,11 @@ function slugify(str: string) {
   return str
     .toString()
     .toLowerCase()
-    .trim() // Remove whitespace from both ends of a string
-    .replace(/\s+/g, "-") // Replace spaces with -
-    .replace(/&/g, "-and-") // Replace & with 'and'
-    .replace(/[^\w\-]+/g, "") // Remove all non-word characters except for -
-    .replace(/\-\-+/g, "-"); // Replace multiple - with single -
+    .trim()
+    .replace(/\s+/g, "-")
+    .replace(/&/g, "-and-")
+    .replace(/[^\w\-]+/g, "")
+    .replace(/\-\-+/g, "-");
 }
 
 function createHeading(level: number) {
@@ -136,4 +149,14 @@ export const CUSTOM_MDX_COMPONENTS = {
   a: CustomLink,
   code: Code,
   Table,
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+  Button,
 };
