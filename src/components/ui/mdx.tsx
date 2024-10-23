@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { MDXRemote, MDXRemoteProps } from "next-mdx-remote/rsc";
 import {
   OnLoadingComplete,
   PlaceholderValue,
@@ -126,7 +125,7 @@ function createHeading(level: number) {
   return Heading;
 }
 
-const components = {
+export const CUSTOM_MDX_COMPONENTS = {
   h1: createHeading(1),
   h2: createHeading(2),
   h3: createHeading(3),
@@ -138,12 +137,3 @@ const components = {
   code: Code,
   Table,
 };
-
-export function CustomMDX(props: MDXRemoteProps) {
-  return (
-    <MDXRemote
-      {...props}
-      components={{ ...components, ...(props.components || {}) } as any}
-    />
-  );
-}

@@ -3,9 +3,10 @@ import type { Metadata } from "next";
 import Footer from "./(shared)/footer";
 import NavMain from "./(shared)/nav-main";
 import "./globals.css";
+import "./prose.css";
 
 export const metadata: Metadata = {
-  title: "%s | Inmo Inversor | Aprende a invertir en bienes raices en España",
+  title: "Inmo Inversor | Aprende a invertir en bienes raices en España",
   description: "Canal de aprendizaje sobre inversión inmobiliaria en España",
 };
 

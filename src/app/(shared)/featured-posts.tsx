@@ -88,7 +88,7 @@ export default async function FeaturedPosts() {
                 </CardContent>
                 <CardFooter>
                   <Link
-                    href={paths.blog.root(article.slug)}
+                    href={paths.blog.slug(article.slug)}
                     className="flex w-full pt-2"
                   >
                     <Button className="flex w-full">Read the article</Button>

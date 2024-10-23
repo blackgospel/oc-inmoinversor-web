@@ -48,7 +48,7 @@ interface DummyContentProps {
 
 const DummyContent: React.FC<DummyContentProps> = ({ short }) => {
   return (
-    <a href={short.canonical_url} target="_blank" rel="noopener noreferrer">
+    <a href={short.video_url} target="_blank" rel="noopener noreferrer">
       <div className="bg-gray-100 p-6 rounded-lg shadow-md">
         <div className="mb-4">
           <span className="text-sm font-medium text-gray-500">

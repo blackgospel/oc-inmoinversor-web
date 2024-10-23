@@ -1,10 +1,11 @@
 "use server";
+import { CUSTOM_MDX_COMPONENTS } from "@/components/ui/mdx";
 import { awaitAllSettled } from "@/lib/await-settled";
 import { fAfter, fSameOrBefore } from "@/lib/format-time";
 import { Article, FrontMatterFields } from "@/lib/types";
 import { limit } from "@/lib/utils";
 import { promises as fs } from "fs";
-import { compileMDX } from "next-mdx-remote/rsc";
+import { compileMDX, MDXRemoteProps } from "next-mdx-remote/rsc";
 import path from "path";
 
 const articlesDir = path.join(process.cwd(), "./articles");
@@ -22,6 +23,7 @@ const genArticles = async (): Promise<Article[]> => {
       options: {
         parseFrontmatter: true,
       },
+      components: CUSTOM_MDX_COMPONENTS as MDXRemoteProps["components"],
     });
 
     return {

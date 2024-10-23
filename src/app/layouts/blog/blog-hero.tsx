@@ -8,7 +8,7 @@ interface BlogHeroProps {
   article: Article;
 }
 
-export default function BlogHero({ article }: BlogHeroProps) {
+export function BlogHero({ article }: BlogHeroProps) {
   return (
     <Wrapper className="py-[5dvh]">
       <InnerWrap className="items-start justify-center max-w-6xl">

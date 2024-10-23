@@ -1,8 +1,8 @@
 import { Article } from "@/lib/types";
 import { getRelatedArticlesAction } from "@/server/actions/articles";
-import BlogContent from "./blog-content";
-import BlogHero from "./blog-hero";
-import BlogRelatedPosts from "./blog-related-posts";
+import { BlogContent } from "./blog-content";
+import { BlogHero } from "./blog-hero";
+import { BlogRelatedPosts } from "./blog-related-posts";
 
 interface BlogLayoutProps {
   article: Article;

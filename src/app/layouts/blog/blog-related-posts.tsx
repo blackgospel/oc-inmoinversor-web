@@ -7,13 +7,11 @@ interface BlogRelatedPostsProps {
   relatedPosts?: Article[];
 }
 
-export default function BlogRelatedPosts({
-  relatedPosts,
-}: BlogRelatedPostsProps) {
+export function BlogRelatedPosts({ relatedPosts }: BlogRelatedPostsProps) {
   return (
     <Wrapper className="py-[5dvh]">
       <InnerWrap>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 border border-gray-200 bg-gray-100 rounded-xl p-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 border border-gray-200 bg-gray-100 dark:border-neutral-700 dark:bg-neutral-900 rounded-xl p-8">
           <div className="flex flex-col justify-start items-start">
             <h2 className="text-3xl font-bold mb-2">Related Articles</h2>
             <p className="mb-8">You might find these articles interesting.</p>

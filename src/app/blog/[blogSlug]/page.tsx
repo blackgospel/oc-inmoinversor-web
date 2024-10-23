@@ -1,4 +1,5 @@
 import { BlogLayout } from "@/app/layouts/blog/layout";
+import { paths } from "@/routes/paths";
 import { getArticleBySlugAction } from "@/server/actions/articles";
 import { notFound } from "next/navigation";
 
@@ -21,7 +22,7 @@ export async function generateMetadata({ params }: BlogParams) {
       title: article.title,
       description: article.description,
       type: "article",
-      url: `https://inmoinversor.com/blog/${article.slug}`,
+      url: paths.base.blog(article.slug),
       images: [
         {
           url: article.image,
