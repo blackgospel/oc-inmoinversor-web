@@ -1,5 +1,6 @@
 import { InnerWrap, Wrapper } from "@/lib/atoms";
 import { Article } from "@/lib/types";
+import { paths } from "@/routes/paths";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -19,7 +20,10 @@ export function BlogRelatedPosts({ relatedPosts }: BlogRelatedPostsProps) {
           <ul className="grid grid-cols-1 gap-2">
             {relatedPosts?.map((post, index) => (
               <li key={index} className="flex items-center mb-4">
-                <Link href="/" className="flex items-center w-full">
+                <Link
+                  href={paths.blog.slug(post.slug)}
+                  className="flex items-center w-full"
+                >
                   <Image
                     src={post.image}
                     alt={post.slug}
